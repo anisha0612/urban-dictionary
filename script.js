@@ -22,10 +22,16 @@ const getPhrase = (event) => {
 
 const displayContent = (items) => {
   dictionary.classList.add("box");
-  for (let item of items) {
+  if (!Array.isArray(items) || !items.length) {
     dictionary.innerHTML = `
     <article class="columns">
-      <div class="column subtitle has-text-weight-bold">Phrase :</div>
+      <div class="column subtitle has-text-weight-bold">No Results Found!! Term doesn't doesn't Exist!</div>
+    </article>`;
+  } else {
+    for (let item of items) {
+      dictionary.innerHTML = `
+    <article class="columns">
+      <div class="column subtitle has-text-weight-bold">Term :</div>
       <div class="column is-capitalized has-text-weight-semibold ">${item.term}</div>
     </article>
     <article class="columns">
@@ -37,6 +43,7 @@ const displayContent = (items) => {
       <div class="column has-text-weight-semibold ">${item.example}</div>
     </article> 
     `;
+    }
   }
 };
 
