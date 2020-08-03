@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- bulma css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <!-- patterns stylesheet -->
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
+
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Urban Dictionary</title>
+  </head>
+  <body>
+    <div class="container has-text-centered">
+      <div class="hero">
+        <div class="hero-body">
+          <h1 class="title is-uppercase py-3">
+            Urban Dictionary
+          </h1>
+          <p class="subtitle py-3">
+            Not sure what few slangs mean, go on search for them to find out..
+          </p>
+        </div>
+      </div>
+      <div class="input-container">
+        <input
+          type="text"
+          name="search"
+          id="input"
+          class="input has-text-centered"
+          placeholder="Search Phrase..."
+          autocomplete="off"
+        />
+      </div>
+      <div class="buffer"></div>
+      <div class="display-container container mb-5 mx-6 px-3"></div>
+    </div>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <!-- custom js file -->
+    <script src="script.js"></script>
+  </body>
+</html>

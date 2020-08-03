@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+  color: #fde482;
+  background-color: #facb0e;
+  background-image: repeating-linear-gradient(
+    to right,
+    currentColor,
+    currentColor 1px,
+    transparent 1px,
+    transparent
+  );
+  background-size: 25px 25px;
+}
+
+body {
+  margin: 0;
+  font-family: "Overpass Mono", monospace;
+}
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.buffer {
+  margin: 2em 0;
+  padding: 2em 0;
+}
+
+::placeholder {
+  letter-spacing: 0.5em;
+}
+
+#input {
+  max-width: 70%;
+}
