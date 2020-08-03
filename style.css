@@ -30,6 +30,6 @@ body {
   letter-spacing: 0.5em;
 }
 
-#input {
+.input {
   max-width: 70%;
 }
