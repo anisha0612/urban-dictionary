@@ -1,5 +1,6 @@
 const dictionary = document.querySelector(".display-container");
 const input = document.querySelector("#input");
+let define = ``;
 
 const phraseSearch = (phrase) => {
   const apiUrl = `http://urbanscraper.herokuapp.com/search/${phrase}`;
@@ -7,6 +8,7 @@ const phraseSearch = (phrase) => {
   axios
     .get(proxyUrl + apiUrl)
     .then((result) => {
+      console.log(result.data);
       displayContent(result.data);
     })
     .catch((err) => {
@@ -29,7 +31,7 @@ const displayContent = (items) => {
     </article>`;
   } else {
     for (let item of items) {
-      dictionary.innerHTML = `
+      define += `
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">Term :</div>
       <div class="column is-capitalized has-text-weight-semibold ">${item.term}</div>
@@ -41,9 +43,11 @@ const displayContent = (items) => {
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">Example:</div>
       <div class="column has-text-weight-semibold ">${item.example}</div>
-    </article> 
+    </article>
+    <div class="divider"><div class="divider-mask"></div><span><i>&#10038;</i></span></div>
     `;
     }
+    dictionary.innerHTML += `<br/>` + define;
   }
 };
 
