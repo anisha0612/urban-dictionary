@@ -1,5 +1,5 @@
 const dictionary = document.querySelector(".display-container");
-const input = document.querySelector("#input");
+const input = document.querySelector(".input");
 
 const phraseSearch = (phrase) => {
   const apiUrl = `http://urbanscraper.herokuapp.com/search/${phrase}`;
