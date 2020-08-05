@@ -1,6 +1,5 @@
 const dictionary = document.querySelector(".display-container");
 const input = document.querySelector("#input");
-let define = ``;
 
 const phraseSearch = (phrase) => {
   const apiUrl = `http://urbanscraper.herokuapp.com/search/${phrase}`;
@@ -23,6 +22,7 @@ const getPhrase = (event) => {
 };
 
 const displayContent = (items) => {
+  let define = ``;
   dictionary.classList.add("box");
   if (!Array.isArray(items) || !items.length) {
     dictionary.innerHTML = `
