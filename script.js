@@ -44,7 +44,8 @@ const displayContent = (items) => {
       <div class="column subtitle has-text-weight-bold">Example:</div>
       <div class="column has-text-weight-semibold ">${item.example}</div>
     </article>
-    <div class="divider"><div class="divider-mask"></div><span><i>&#10038;</i></span></div>
+    <img class="image-divider"
+       src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/101448/wedding-divider-png-9.png" />
     `;
     }
     dictionary.innerHTML += `<br/>` + define;
