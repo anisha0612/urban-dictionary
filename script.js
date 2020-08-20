@@ -25,11 +25,12 @@ const displayContent = (items) => {
   let define = ``;
   dictionary.classList.add("box");
   if (!Array.isArray(items) || !items.length) {
-    dictionary.innerHTML = `
+    return (dictionary.innerHTML = `
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">No Results Found!! Term doesn't doesn't Exist!</div>
-    </article>`;
+    </article>`);
   } else {
+    dictionary.innerHTML = ``;
     for (let item of items) {
       define += `
     <article class="columns">
@@ -48,7 +49,7 @@ const displayContent = (items) => {
        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/101448/wedding-divider-png-9.png" />
     `;
     }
-    dictionary.innerHTML += `<br/>` + define;
+    return (dictionary.innerHTML += `<br/>` + define);
   }
 };
 
