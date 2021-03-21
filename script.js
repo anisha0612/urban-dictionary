@@ -2,13 +2,15 @@ const dictionary = document.querySelector(".display-container");
 const input = document.querySelector("#input");
 
 const phraseSearch = (phrase) => {
-  const apiUrl = `https://api.urbandictionary.com/v0/define?term=${phrase}`;
+  const apiUrl = `https://www.dictionaryapi.com/api/v3/references/medical/json/${phrase}?key=dd59c1e0-bfc4-4397-b37c-6525cf690983`;
+  // `https://api.urbandictionary.com/v0/define?term=${phrase}`;
+
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   axios
     .get(apiUrl)
     .then((result) => {
-      console.log(result.data.list);
-      displayContent(result.data.list);
+      console.log(result.data);
+      displayContent(result.data);
     })
     .catch((err) => {
       console.log("Unable to load");
@@ -35,16 +37,13 @@ const displayContent = (items) => {
       define += `
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">Term :</div>
-      <div class="column is-capitalized has-text-weight-semibold ">${item.word}</div>
+      <div class="column is-capitalized has-text-weight-semibold ">${item.hwi.hw}</div>
     </article>
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">Definition :</div>
-      <div class="column has-text-weight-semibold ">${item.definition}</div>
+      <div class="column has-text-weight-semibold ">${item.shortdef}</div>
     </article>
-    <article class="columns">
-      <div class="column subtitle has-text-weight-bold">Example:</div>
-      <div class="column has-text-weight-semibold ">${item.example}</div>
-    </article>
+
     <img class="image-divider"
        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/101448/wedding-divider-png-9.png" />
     `;
@@ -54,3 +53,8 @@ const displayContent = (items) => {
 };
 
 input.addEventListener("keydown", getPhrase);
+
+// <article class='columns'>
+//   <div class='column subtitle has-text-weight-bold'>Example:</div>
+//   <div class='column has-text-weight-semibold '>${item.example}</div>
+// </article>;
