@@ -2,13 +2,13 @@ const dictionary = document.querySelector(".display-container");
 const input = document.querySelector("#input");
 
 const phraseSearch = (phrase) => {
-  const apiUrl = `http://urbanscraper.herokuapp.com/search/${phrase}`;
+  const apiUrl = `http://api.urbandictionary.com/v0/define?term=${phrase}`;
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   axios
-    .get(proxyUrl + apiUrl)
+    .get(apiUrl)
     .then((result) => {
-      console.log(result.data);
-      displayContent(result.data);
+      console.log(result.data.list);
+      displayContent(result.data.list);
     })
     .catch((err) => {
       console.log("Unable to load");
@@ -35,7 +35,7 @@ const displayContent = (items) => {
       define += `
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">Term :</div>
-      <div class="column is-capitalized has-text-weight-semibold ">${item.term}</div>
+      <div class="column is-capitalized has-text-weight-semibold ">${item.word}</div>
     </article>
     <article class="columns">
       <div class="column subtitle has-text-weight-bold">Definition :</div>
