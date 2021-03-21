@@ -2,7 +2,7 @@ const dictionary = document.querySelector(".display-container");
 const input = document.querySelector("#input");
 
 const phraseSearch = (phrase) => {
-  const apiUrl = `http://api.urbandictionary.com/v0/define?term=${phrase}`;
+  const apiUrl = `https://api.urbandictionary.com/v0/define?term=${phrase}`;
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   axios
     .get(apiUrl)
